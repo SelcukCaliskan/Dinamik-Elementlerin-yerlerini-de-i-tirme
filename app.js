@@ -1,18 +1,19 @@
-//Dinamik Element Silme
+//REPLACE
+//h5 ile h3 ün yerlerini değiştirecez.
+//<h5 class="card-title" id = "tasks-title">Todolar</h5>
 
-const todoList =document.querySelector("ul.list-group");
-const todos=document.querySelectorAll("li.list-group-item");
-
-
-//Remove Metodu
-//todos[1].remove();
+const cardbody=document.querySelectorAll(".card-body")[1];
 
 
-//Remove Child
-//Son cocuğu silmek için yaptık başka çocuklarda bu şekilde silinebilir.
-//todoList.removeChild(todoList.lastElementChild);
+const newElement=document.createElement("h3");
 
-//4.cocuğu sildik bu şekilde..
-//todoList.removeChild(todos[3]);
-console.log(todos);
-console.log(todoList);
+newElement.className="card-title";
+newElement.id="tasks.title";
+newElement.textContent="Yeni Todolar";
+
+
+//Eski Element
+const oldElement=document.querySelector("#tasks-title");
+cardbody.replaceChild(newElement,oldElement);
+
+console.log(newElement);
